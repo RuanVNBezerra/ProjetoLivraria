@@ -1,16 +1,16 @@
-// aqui ficara as informações dos livros
+// aqui ficara as informaÃ§Ãµes dos livros, eles podem ser atualizados, excluidos, adicionados e consultados
 {
   "Livros": [
     {
       "id": 1,
-      "titulo": "O Senhor dos Anéis",
+      "titulo": "O Senhor dos Anï¿½is",
       "autor": "J.R.R. Tolkien",
       "editora": "WMF Martins Fontes",
       "ano": 2010,
       "genero": "Fantasia",
       "paginas": 1216,
-      "idioma": "Português",
-      "preço": 50.00,
+      "idioma": "Portuguï¿½s",
+      "preï¿½o": 50.00,
       "quantidade": 10
     },
     {
@@ -21,8 +21,8 @@
       "ano": 2000,
       "genero": "Fantasia",
       "paginas": 254,
-      "idioma": "Português",
-      "preço": 40.00,
+      "idioma": "Portuguï¿½s",
+      "preï¿½o": 40.00,
       "quantidade": 7
     }
   ]

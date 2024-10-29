@@ -27,7 +27,7 @@ public class LivrosController : ControllerBase
     }
     /*
      1.	Anotação [HttpGet("{id}")]:
-•	Esta anotação indica que o método responde a requisições HTTP GET no formato api/livros/{id}, 
+	Esta anotação indica que o método responde a requisições HTTP GET no formato api/livros/{id}, 
     onde {id} é um parâmetro que será passado na URL. 
     Por exemplo, uma requisição para api/livros/1 chamará este método com id igual a 1.
      */
@@ -43,7 +43,7 @@ public class LivrosController : ControllerBase
 	    Esta linha usa LINQ para procurar o primeiro livro na lista livros que tenha o id igual ao valor passado como parâmetro.
         Se nenhum livro for encontrado, FirstOrDefault retorna null.
          */
-        var livro = livros.FirstOrDefault(x => x.id == id);
+        var livro = livros.FirstOrDefault(procurarLivro => procurarLivro.id == id);
         if (livro == null)
         {
             return NotFound();
@@ -86,16 +86,54 @@ public class LivrosController : ControllerBase
     }
 
     // atualizar livro
-
-
-
-
-
-
-
-
-
-
+    /*
+     1.	Anotação [HttpPut("{id}")]:
+	Indica que este método responde a requisições HTTP PUT no formato api/livros/{id}, onde {id} é um parâmetro que será passado na URL. 
+    Por exemplo, uma requisição para api/livros/1 chamará este método com id igual a 1.
+     */
+    [HttpPut("{id}")]
+    /*
+     	public ActionResult AtualizarLivro(int id, Livro livro): Define um método público que retorna um ActionResult.
+        O parâmetro id é o ID do livro que se deseja atualizar, 
+        e livro é um objeto do tipo Livro que contém os novos dados para o livro.
+     */
+    /*
+     	var livroExistente = livros.FirstOrDefault(x => x.id == id);: Usa LINQ para procurar o primeiro livro na lista livros que tenha o id igual ao valor passado como parâmetro. 
+        Se nenhum livro for encontrado, FirstOrDefault retorna null.
+     */
+    public ActionResult AtualizarLivro(int id, Livro livro)
+    {
+        var livroExistente = livros.FirstOrDefault(atualizar => atualizar.id == id);
+        if (livroExistente == null)
+        {
+            return NotFound();
+        }
+        /*
+         Essas linhas de código estão copiando os valores dos campos do objeto livro (que foi passado como parâmetro para o método) para o objeto livroExistente (que foi encontrado na lista de livros com base no ID). 
+         Basicamente, isso atualiza o livro existente com os novos valores fornecidos.
+         */
+        livroExistente.titulo = livro.titulo;
+        livroExistente.autor = livro.autor;
+        livroExistente.editora = livro.editora;
+        livroExistente.ano = livro.ano;
+        livroExistente.preco = livro.preco;
+        livroExistente.quantidade = livro.quantidade;
+        return NoContent();
+    }
 
     // deletar livro
+    //deletar o livro especificado pelo id
+    [HttpDelete("{id}")]
+    public ActionResult DeletarLivro(int id)
+    {   //procurar o livro pelo id usando lambda expression e remover o livro da lista
+        var livro = livros.FirstOrDefault(remover => remover.id == id);
+        if (livro == null)
+        { // se o livro for nulo, retorna um status code 404
+            return NotFound();
+        }
+        //caso ache o livro, remove o livro da lista
+        livros.Remove(livro);
+        return NoContent();
+    }
 }
+
