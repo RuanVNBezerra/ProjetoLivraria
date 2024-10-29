@@ -1,7 +1,6 @@
 # Projeto .NET 8 e ASP.NET Core 6
 
-Este é um projeto desenvolvido utilizando .NET 8. O objetivo deste projeto é criar uma api simples de livraria, essa API deve poder adcionar livro, identificar por ID, atualizar e excluir livro.
-ou seja, um crud, fiz essa API básica sobre livros para treinar meus conhecimentos em .NET 8. e asp.net core 6.
+Este é um projeto desenvolvido utilizando .NET 8. O objetivo deste projeto é criar uma API simples de livraria, que permite adicionar livros, identificar por ID, atualizar e excluir livros. Ou seja, um CRUD. Fiz essa API básica sobre livros para treinar meus conhecimentos em .NET 8 e ASP.NET Core 6.
 
 ## Requisitos
 
@@ -11,14 +10,46 @@ ou seja, um crud, fiz essa API básica sobre livros para treinar meus conhecimen
 ## Configuração do Ambiente
 
 1. Clone o repositório:
+   ```bash
+   git clone https://github.com/RuanVNBezerra/ProjetoLivraria.git
+   cd ProjetoLivraria
+   ```
 2. Navegue até o diretório do projeto:
+   ```bash
+   cd ProjetoLivraria
+   ```
 3. Restaure as dependências do projeto:
+   ```bash
+   dotnet restore
+   ```
+
 ## Executando o Projeto
 
 Para executar o projeto, utilize o seguinte comando:
+```bash
+dotnet run
+```
+
+## Endpoints da API
+
+- **Criar um livro:**
+  - `POST /api/books`
+- **Visualizar todos os livros:**
+  - `GET /api/books`
+- **Visualizar um livro por ID:**
+  - `GET /api/books/{id}`
+- **Atualizar um livro:**
+  - `PUT /api/books/{id}`
+- **Excluir um livro:**
+  - `DELETE /api/books/{id}`
+
 ## Testes
 
 Para rodar os testes, utilize o seguinte comando:
+```bash
+dotnet test
+```
+
 ## Contribuição
 
 1. Faça um fork do projeto
@@ -30,3 +61,4 @@ Para rodar os testes, utilize o seguinte comando:
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](https://github.com/RuanVNBezerra/ProjetoLivraria/blob/master/LICENSE.txt) para mais detalhes.
+```
