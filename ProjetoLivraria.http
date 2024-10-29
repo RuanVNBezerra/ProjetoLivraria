@@ -1,0 +1,6 @@
+@ProjetoLivraria_HostAddress = http://localhost:5102
+
+GET {{ProjetoLivraria_HostAddress}}/ProjetoLivraria/
+Accept: application/json
+
+###
