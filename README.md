@@ -61,4 +61,3 @@ dotnet test
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](https://github.com/RuanVNBezerra/ProjetoLivraria/blob/master/LICENSE.txt) para mais detalhes.
-```
