@@ -1,7 +1,7 @@
-# Projeto .NET 8
+# Projeto .NET 8 e ASP.NET Core 6
 
 Este é um projeto desenvolvido utilizando .NET 8. O objetivo deste projeto é criar uma api simples de livraria, essa API deve poder adcionar livro, identificar por ID, atualizar e excluir livro.
-ou seja, um crud, fiz essa api basica sobre livrvos para treinar meus conhecimentos em .NET 8. e asp.net core 6.
+ou seja, um crud, fiz essa API básica sobre livros para treinar meus conhecimentos em .NET 8. e asp.net core 6.
 
 ## Requisitos
 
